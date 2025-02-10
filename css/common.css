@@ -1,0 +1,290 @@
+@charset "UTF-8";
+/*
+SP ～519px
+tab 520px～959px
+PC 960px～
+*/
+
+/*===============
+変数宣言
+===============*/
+:root {
+    --size_es: 0.8rem;
+    --size_sm: 1rem;
+    --size_md: 1.6rem;
+    --size_lg: 2.6rem;
+    --size_xl: 4.1rem;
+    --size_xxl: 6.6rem;
+    --main_color: #f77237;
+    --main_color_80: 247, 114, 55, 0.8;
+    --text_color: #44190c;
+    --gutter_base: 8px;
+    --section_gutter: calc(var(--gutter_base)*10);
+    --section_gutter_pc: calc(var(--gutter_base)*20);
+    --contents_gutter: calc(var(--gutter_base)*5);
+    --contents_gutter_pc: calc(var(--gutter_base)*10);
+    --contents_side_gutter: calc(var(--gutter_base)*2);
+    --footer_gutter: calc(var(--gutter_base)*30);
+    --font_sans: 'Noto Sans JP', sans-serif;
+    --font_serif: 'Noto Serif JP', sans-serif;
+}
+
+/*===============
+共通設定
+===============*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: var(--size_md);
+    line-height: 1.75;
+    font-family: var(--font_sans);
+    color: var(--text_color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main_color);
+}
+
+.center {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contents_title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--contents_gutter);
+}
+
+.contents_title.pc {
+    display: none;
+}
+
+.btn {
+    border: 1px solid var(--main_color);
+    display: block;
+    max-width: 350px;
+    line-height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+    transition: 0.4s;
+}
+
+.btn::after {
+    font-family: 'Material Symbols Outlined';
+    content: '\e5c8';
+    vertical-align: middle;
+    position: absolute;
+    right: 20px;
+    transition: 0.4s;
+
+}
+
+@media screen and (min-width:960px) {
+    a:hover {
+        opacity: 0.6;
+    }
+
+    .contents_title {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    .contents_title.sp {
+        display: none;
+    }
+
+    .contents_title.pc {
+        display: block;
+    }
+
+    .btn:hover {
+        opacity: 1;
+        background-color: var(--main_color);
+        color: #fff;
+    }
+
+    .btn:hover::after {
+        right: 15px;
+        content: '\e5cc';
+    }
+
+    /*=========min-width:960px============*/
+}
+
+/*===============
+ヘッダー、ナビ
+===============*/
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+
+header .header_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--gutter_base);
+    padding-left: var(--gutter_base);
+    padding-right: var(--gutter_base);
+}
+
+header .header_inner h1 {
+    width: 200px;
+}
+
+
+header .header_inner nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(var(--main_color_80));
+    width: 100%;
+    height: 100vh;
+    padding-top: calc(var(--gutter_base)*10);
+    padding-left: calc(var(--gutter_base)*5);
+    padding-right: calc(var(--gutter_base)*5);
+    z-index: 10;
+    transition: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+header.on .header_inner nav {
+    visibility: visible;
+    opacity: 1;
+}
+
+header .header_inner nav a {
+    color: #fff;
+    display: block;
+    /*280pxの、galaxy fold用のサイズ*/
+    font-size: var(--size_lg);
+    border-bottom: 2px dotted #fff;
+    line-height: 2.5;
+}
+
+@media screen and (min-width:300px) {
+    header .header_inner nav a {
+        font-size: var(--size_xl);
+
+    }
+
+    /*=========min-width:300px============*/
+}
+
+header .header_inner .hum_menu {
+    color: var(--main_color);
+    border: 1px solid var(--main_color);
+    padding: var(--gutter_base);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    mix-blend-mode: difference;
+}
+
+header .header_inner .hum_menu .hum_menu_line::after,
+header .header_inner .hum_menu .hum_menu_line::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: var(--main_color);
+}
+
+header .header_inner .hum_menu .hum_menu_line::before {
+    transform: translateY(-2px);
+}
+
+header .header_inner .hum_menu .hum_menu_line::after {
+    transform: translateY(4px);
+}
+
+header.on .header_inner .hum_menu .hum_menu_line::before {
+    transform: translateY(2px) rotate(45deg);
+}
+
+header.on .header_inner .hum_menu .hum_menu_line::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+
+header .header_inner .hum_menu .hum_menu_text {
+    margin-left: var(--gutter_base);
+}
+
+@media screen and (min-width:960px) {
+    header .header_inner {
+        padding-top: calc(var(--gutter_base)*3);
+        padding-left: calc(var(--gutter_base)*3);
+        padding-right: calc(var(--gutter_base)*3);
+    }
+
+    header .header_inner nav {
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    header .header_inner .hum_menu {
+        display: none;
+    }
+
+    header .header_inner nav a {
+        color: var(--main_color);
+        font-size: var(--size_md);
+        border-bottom: none;
+        line-height: 1.75;
+    }
+
+    header .header_inner nav ul {
+        display: flex;
+    }
+
+    header .header_inner nav ul li {
+        margin-left: calc(var(--gutter_base)*2);
+    }
+
+    /*=========min-width:960px============*/
+}
+
+/*===============
+フッター
+===============*/
+footer {
+    background-color: var(--main_color);
+    color: #fff;
+    padding: calc(var(--gutter_base)*3) 0;
+}
+
+footer .footer_inner img {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 260px;
+    margin-bottom: calc(var(--gutter_base)*3);
+}
+
+footer .footer_inner address {
+    text-align: center;
+    font-style: normal;
+}
+
+footer .footer_inner small {
+    text-align: center;
+    display: block;
+}
