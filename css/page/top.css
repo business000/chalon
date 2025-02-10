@@ -1,0 +1,346 @@
+@charset "UTF-8";
+
+/*
+SP ～519px
+tab 520px～959px
+PC 960px～
+*/
+/*================
+video
+================*/
+.mv {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: #000;
+}
+
+.mv video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.mv .pc {
+    display: none;
+}
+
+@media screen and (min-width:520px) {
+    .mv .pc {
+        display: block;
+    }
+
+    .mv .sp {
+        display: none;
+    }
+
+    /*=======min-width:520px==========*/
+}
+
+/*================
+スクロール
+================*/
+.scroll_down {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: -1;
+    padding-top: 81px;
+}
+
+.scroll_down .arrow_down {
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(135deg);
+}
+
+.scroll_down::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 90px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-1px);
+    animation: arrow 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes arrow {
+    0% {
+        transform-origin: 0% 0%;
+        transform: scale(1, 0) translateX(-1px);
+    }
+
+    50% {
+        transform-origin: 0% 0%;
+        transform: scale(1, 1) translateX(-1px);
+    }
+
+    51% {
+        transform-origin: 0% 100%;
+        transform: scale(1, 1) translateX(-1px);
+    }
+
+    100% {
+        transform-origin: 0% 100%;
+        transform: scale(1, 0) translateX(-1px);
+    }
+}
+
+/*================
+key title
+================*/
+.key_title {
+    height: 150vh;
+}
+
+.key_title .key_title_inner {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.key_title .key_title_inner img {
+    width: 90%;
+    max-width: 520px;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+}
+
+@media screen and (min-width:620px) {
+    .key_title .key_title_inner {
+        justify-content: end;
+        transform: translateX(calc(var(--gutter_base)*-10));
+    }
+
+    /*=======min-width:620px==========*/
+}
+
+/*================
+concept
+================*/
+.concept {
+    margin-bottom: 25vh;
+}
+
+
+.concept .concept_text {
+    color: #fff;
+    font-size: var(--size_lg);
+    padding: 0 var(--contents_side_gutter);
+}
+
+.concept .concept_text p {
+    margin-bottom: var(--size_lg);
+}
+
+.concept .concept_img {
+    padding: 0 var(--contents_side_gutter);
+}
+
+.concept .concept_img picture {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+}
+
+@media screen and (min-width:960px) {
+    .concept {
+        margin-bottom: 35vh;
+    }
+
+    .concept .concept_inner {
+        display: flex;
+    }
+
+    .concept .concept_img picture {
+        position: sticky;
+        top: calc(100vh - 375px - var(--gutter_base)*3);
+    }
+
+    /*=======min-width:960px==========*/
+}
+
+/*================
+メニュー
+================*/
+.menu {
+    background-color: #fff;
+    padding: var(--section_gutter) 0;
+}
+
+.menu .menu_inner .slider {
+    margin-bottom: var(--contents_gutter);
+}
+
+.menu .menu_inner .slider li {
+    padding: 0 calc(var(--gutter_base)*2);
+}
+
+.menu .menu_inner .menu_text {
+    text-align: center;
+    margin-bottom: var(--contents_gutter);
+}
+
+@media screen and (min-width:960px) {
+    .menu {
+        padding: var(--section_gutter_pc) 0;
+    }
+
+    .menu .menu_inner .slider {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    .menu .menu_inner .menu_text {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    /*=======min-width:960px==========*/
+}
+
+/*================
+お菓子教室
+================*/
+.lesson {
+    background-color: #fff;
+    padding-bottom: var(--section_gutter);
+}
+
+.lesson .lesson_inner .lesson_text {
+    padding: 0 var(--contents_side_gutter);
+    margin-bottom: var(--contents_gutter);
+}
+
+.lesson .lesson_inner .lesson_img {
+    display: block;
+    padding: 0 var(--contents_side_gutter);
+    margin-bottom: var(--contents_gutter);
+}
+
+@media screen and (min-width:960px) {
+    .lesson {
+        padding-bottom: var(--section_gutter_pc);
+    }
+
+    .lesson .lesson_inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .lesson .lesson_inner .lesson_img {
+        grid-column: 2/3;
+        grid-row: 1/4;
+        margin-bottom: 0;
+    }
+
+    .lesson .lesson_inner h2 .contents_title {
+        margin-bottom: var(--contents_gutter);
+    }
+
+    .lesson .lesson_inner .btn {
+        width: 100%;
+        align-self: start;
+    }
+
+    /*=======min-width:960px==========*/
+}
+
+/*================
+bg_placeholder
+================*/
+.bg_placeholder {
+    height: 350px;
+    /* background-image: url(../../img/top_showcase.webp); */
+    background-size: cover;
+}
+
+@media screen and (min-width:960px) {
+    .bg_placeholder {
+        height: 600px;
+    }
+
+    /*=======min-width:960px==========*/
+}
+
+/*================
+news
+================*/
+.news {
+    background-color: #fff;
+    padding-top: var(--section_gutter);
+    padding-bottom: var(--footer_gutter);
+}
+
+.news .news_inner dl {
+    padding: 0 var(--contents_side_gutter);
+    margin-bottom: var(--gutter_base);
+
+}
+
+.news .news_inner dl:last-child {
+    margin-bottom: 0;
+}
+
+.news .news_inner dl dd {
+    border-bottom: 2px dotted var(--main_color);
+    padding-bottom: var(--gutter_base);
+}
+
+@media screen and (min-width:520px) {
+    .news .news_inner dl {
+        display: flex;
+        border-bottom: 2px dotted var(--main_color);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .news .news_inner dl dt {
+        width: 30%;
+    }
+
+    .news .news_inner dl dd {
+        width: 70%;
+        border-bottom: none;
+    }
+
+    /*=======min-width:520px==========*/
+}
+
+@media screen and (min-width:960px) {
+    .news {
+        padding-top: var(--section_gutter_pc);
+    }
+
+    /*=======min-width:960px==========*/
+}
+
+/*================
+bg
+================*/
+.bg {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(../../img/top_showcase.webp);
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    display: none;
+}
+
+.bg.on {
+    display: block;
+}
