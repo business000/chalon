@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/*
+SP ～519px
+tab 520px～959px
+PC 960px～
+*/
+.under_title {
+    height: 40vh;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: var(--section_gutter);
+    background-image: url(../../img/top_lesson.webp);
+
+}
+
+.under_title .under_title_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.under_title .under_title_inner img.contents_title {
+    margin-left: 0;
+    margin-right: 0;
+    transform: translateY(50px);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: calc(var(--gutter_base)*2) calc(var(--gutter_base)*4);
+}
+
+.page_title {
+    font-size: var(--size_xl);
+    font-weight: normal;
+    margin-bottom: var(--section_gutter);
+    text-align: center;
+    color: var(--main_color);
+    font-family: var(--font_serif);
+}
+
+.contents_title {
+    font-size: var(--size_lg);
+    font-weight: normal;
+    margin-bottom: var(--contents_gutter);
+    color: var(--main_color);
+    font-family: var(--font_serif);
+
+}
+
+
+@media screen and (min-width:520px) {
+    .page_title {
+        font-size: var(--size_xxl);
+    }
+
+    .contents_title {
+        font-size: var(--size_xl);
+        max-width: 750px;
+    }
+
+    /*=======min-width:520px=======*/
+}
+
+@media screen and (min-width:960px) {
+    .under_title {
+        margin-bottom: var(--section_gutter_pc);
+    }
+
+    .under_title,
+    .under_title .under_title_inner {
+        height: 500px;
+    }
+
+    .under_title .under_title_inner {
+        justify-content: start;
+    }
+
+    .under_title .under_title_inner img.contents_title {
+        transform: translateY(72px);
+        padding: calc(var(--gutter_base)*3) calc(var(--gutter_base)*6);
+    }
+
+    .page_title {
+        margin-bottom: var(--section_gutter_pc);
+    }
+
+    .contents_title {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    /*=======min-width:960px=======*/
+}
