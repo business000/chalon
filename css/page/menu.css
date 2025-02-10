@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/*
+SP ～519px
+tab 520px～959px
+PC 960px～
+*/
+.menu .contents_title {
+    text-align: center;
+}
+
+.menu .menu_cake,
+.menu .menu_other {
+    margin-bottom: var(--section_gutter);
+}
+
+.menu .menu_drink {
+    margin-bottom: var(--footer_gutter);
+}
+
+.menu .menu_cake_inner,
+.menu .menu_other_inner,
+.menu .menu_drink_inner {
+    padding: 0 var(--contents_side_gutter);
+}
+
+.menu .menu_cake_text,
+.menu .menu_other_text,
+.menu .menu_drink_text {
+    margin-bottom: var(--contents_gutter);
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu .menu_cake_img,
+.menu .menu_other_img,
+.menu .menu_drink_img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: calc(var(--contents_gutter));
+}
+
+.menu .menu_cake_img picture,
+.menu .menu_other_img picture,
+.menu .menu_drink_img picture {
+    margin-bottom: var(--gutter_base);
+}
+
+.menu .menu_cake_img figure,
+.menu .menu_other_img figure,
+.menu .menu_drink_img figure {
+    position: relative;
+}
+
+.menu .menu_cake_img figure figcaption,
+.menu .menu_other_img figure figcaption,
+.menu .menu_drink_img figure figcaption {
+    text-align: center;
+}
+
+.menu .menu_cake_img figure figcaption a,
+.menu .menu_other_img figure figcaption a,
+.menu .menu_drink_img figure figcaption a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+@media screen and (min-width:960px) {
+
+    .menu .menu_cake,
+    .menu .menu_other,
+    .menu .menu_drink {
+        margin-bottom: var(--section_gutter_pc);
+    }
+
+    .menu .menu_cake_inner,
+    .menu .menu_other_inner,
+    .menu .menu_drink_inner {
+        padding: 0 var(--contents_side_gutter_pc);
+    }
+
+    .menu .menu_cake_text,
+    .menu .menu_other_text,
+    .menu .menu_drink_text {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    .menu .menu_cake_img,
+    .menu .menu_other_img,
+    .menu .menu_drink_img {
+        grid-gap: calc(var(--contents_gutter_pc));
+    }
+
+
+    .menu .menu_cake_img figure figcaption a:hover,
+    .menu .menu_other_img figure figcaption a:hover,
+    .menu .menu_drink_img figure figcaption a:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /*=======min-width:960px=======*/
+}
