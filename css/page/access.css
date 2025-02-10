@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+/*
+SP ～519px
+tab 520px～959px
+PC 960px～
+*/
+.btn.access {
+    border: 1px solid #3cad5a;
+    color: #3cad5a;
+    margin-bottom: var(--contents_gutter);
+}
+
+.btn.access::after {
+    font-family: 'Material Symbols Outlined';
+    content: '\e5c8';
+    vertical-align: middle;
+    position: absolute;
+    right: 20px;
+    transition: 0.4s;
+}
+
+.access {
+    margin-bottom: var(--footer_gutter);
+}
+
+.access .map {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--contents_gutter);
+}
+
+.access .access_address {
+    font-style: normal;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--contents_side_gutter);
+    margin-bottom: var(--contents_gutter);
+}
+
+.access .access_inner dl {
+    padding: 0 var(--contents_side_gutter);
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.access .access_inner dl dt {
+    margin-bottom: var(--gutter_base);
+    color: var(--main_color);
+}
+
+.access .access_inner dl dd ol {
+    list-style: decimal;
+    padding-left: var(--contents_side_gutter);
+}
+
+.access .access_inner dl dd ol li {
+    margin-bottom: var(--gutter_base);
+}
+
+.access .access_inner dl:not(:last-child) {
+    margin-bottom: calc(var(--gutter_base)*3);
+}
+
+@media screen and (min-width:700px) {
+    .access .page_title br {
+        display: none;
+    }
+
+    /*=======min-width:700px=======*/
+}
+
+@media screen and (min-width:960px) {
+    .btn.access {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    .btn.access:hover {
+        background-color: #3cad5a;
+        color: #fff;
+    }
+
+    .access .map {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    .access .access_address {
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    /*=======min-width:960px=======*/
+}
