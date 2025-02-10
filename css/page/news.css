@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/*
+SP ～519px
+tab 520px～959px
+PC 960px～
+*/
+
+.news .page_title {
+    margin-bottom: 0;
+}
+
+.news time {
+    display: block;
+    text-align: center;
+    margin-bottom: var(--section_gutter);
+
+}
+
+.news .news_inner {
+    padding: 0 var(--contents_side_gutter);
+}
+
+.news .news_inner .news_contents {
+    margin-bottom: var(--contents_gutter);
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news .news_inner .btn {
+    margin-bottom: var(--footer_gutter);
+}
