@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/*
+SP ～519px
+tab 520px～959px
+PC 960px～
+*/
+
+
+.menu_single {
+    margin-bottom: var(--footer_gutter);
+}
+
+.menu_single .menu_single_box {
+    padding: 0 var(--contents_side_gutter);
+    margin-bottom: var(--contents_gutter);
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu_single .menu_single_box picture {
+    margin-bottom: var(--contents_gutter);
+    display: block;
+}
+
+
+
+
+.menu_single .menu_single_box dl {
+    border-bottom: 2px dotted var(--main_color);
+    padding-bottom: var(--gutter_base);
+}
+
+.menu_single .menu_single_box dl:not(:last-child) {
+    margin-bottom: calc(var(--gutter_base)*2);
+}
+
+.menu_single .menu_single_box dl dt {
+    color: var(--main_color);
+}
+
+.menu_single .menu_single_box dl dt::before {
+    content: '\e834';
+    font-family: 'Material Symbols Outlined';
+    vertical-align: middle;
+}
+
+@media screen and (min-width:960px) {
+
+
+    .menu_single .menu_single_box {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: var(--contents_gutter);
+        margin-bottom: var(--contents_gutter_pc);
+    }
+
+    .menu_single .menu_single_box picture {
+        margin-bottom: 0;
+    }
+
+    /*=======min-width:960px=======*/
+}
